@@ -6,6 +6,24 @@
     <title>Road base</title>
 </head>
 <body>
-    <h1>База автомобильных дорог</h1>
+    <section>
+        <header>
+            <h1>База автомобильных дорог</h1>
+            <nav>
+                <a href="{% url 'roads' %}">Автомобильные дороги</a>
+                <a href="{% url 'lands' %}">Земельные участки</a>
+            </nav>
+        </header>
+    </section>
+    <main>
+        {% block content %}
+        {% endblock content %}
+    </main>
+    <hr>
+    <div>
+        <footer>
+            <p>Автомобильные дороги находящиеся в собственности Омской области.</p>
+        </footer>
+    </div>
 </body>
 </html>

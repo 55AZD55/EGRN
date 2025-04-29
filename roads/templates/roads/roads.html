@@ -1,0 +1,32 @@
+{% extends "roads/index.html" %}
+
+{% block content %}
+<table>
+    <thead>
+        <tr>
+            <th>Идентификационный номер ОКС</th><th>Кадастровый
+                номер</th><th>Протяженность</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for road in roads %}
+        <tr>
+            <td>{{ road }}</td> <td>{{ road.kad_number }}</td> <td>{{ road.length }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<style>
+    table {
+        border-collapse: collapse;
+        border: 1px solid grey;
+    }
+
+    td {
+        border: 1px solid grey;
+        align-items: center;
+    }
+</style>
+{% endblock content %}
+
+

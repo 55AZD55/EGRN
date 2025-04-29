@@ -1,0 +1,29 @@
+{% extends "roads/index.html" %}
+
+{% block content %}
+<table>
+    <thead>
+        <tr>
+            <th>Кадастровый номер земельного участка</th><th>Площадь</th><th>Автомобильная дорога</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for land in land_plots %}
+        <tr>
+            <td>{{ land.kad_number }}</td> <td>{{ land.square }}</td> <td>{{ land.road }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<style>
+    table {
+        border-collapse: collapse;
+        border: 1px solid grey;
+    }
+
+    td {
+        border: 1px solid grey;
+        align-items: center;
+    }
+</style>
+{% endblock content %}
