@@ -8,7 +8,7 @@
 <body>
     <section>
         <header>
-            <h1>База автомобильных дорог</h1>
+            <h1><a href="{% url 'index' %}">База автомобильных дорог</a></h1>
             <nav>
                 <a href="{% url 'roads' %}">Автомобильные дороги</a>
                 <a href="{% url 'lands' %}">Земельные участки</a>
@@ -17,6 +17,9 @@
     </section>
     <main>
         {% block content %}
+        <form action="{% url 'search_road' %}" method="get">
+            <input name="q" type="text" placeholder="Поиск дороги...">
+        </form>
         {% endblock content %}
     </main>
     <hr>

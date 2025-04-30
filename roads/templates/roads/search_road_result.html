@@ -1,0 +1,9 @@
+{% extends "roads/index.html" %}
+{% block content %}
+{% for res in resault %}
+    <p>{{ res }}</p>
+{% endfor %}
+<form action="{% url 'search_road' %}" method="get">
+    <input name="q" type="text" placeholder="Поиск дороги...">
+</form>
+{% endblock content %}
